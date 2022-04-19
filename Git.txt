@@ -1,0 +1,74 @@
+1.Xóa branch
+Khi toàn bộ dữ liệu trên branch đó đã được merge vào master thì dùng lệnh sau để xóa
+#git branch -d ＜tên branch cần xóa＞
+Chú ý: với câu lệnh trên thi bắt buộc dữ liệu thì branch muốn xóa phải được merge vào master, không thì bạn sẽ nhận được báo lỗi
+Trường hợp branch muốn xóa chưa được merge vào master thì bạn phải dùng câu lệnh
+#git branch -D ＜tên branch cần xóa＞
+Chú ý: trường hợp này toàn bộ các commit lên branch này sẽ bị mất
+
+2.Lệnh tra lại lịch sử
+#git log
+
+3. Xem trạng thái hiện tại của 1 nhánh
+#git status
+
+4.Thay đổi nội dung commit lần trước
+Sửa lại message commit bị nhầm
+#git commit --amend
+Trường hợp add thiếu file hoặc sửa lại file đã commit
+#git add [file bị thiếu hoặc file cần sửa lại]
+#git commit --amend
+
+5.Undo lại commit
+Trường hợp 1: Muốn "undo" thay đổi trên một file cố định trước khi commit
+#git checkout -- [đường dẫn/tên file]
+
+Nếu muốn undo hẳn một commit (do đã lỡ commit xong rồi) thì cần chỉ định mục tiêu
+#git reset --soft HEAD~1
+Ở đây HEAD~1 nghĩa là trước 1 commit. Mình dùng soft để lưu lại những thay đổi chưa commit và chỉ bỏ đi phần đã commit từ lần trước
+
+Nếu muốn bỏ cả phần đã commit từ lần trước và phần chưa commit thì đổi soft thành hard
+#git reset --hard HEAD~1
+
+6. Git Clean
+Xóa hết các files chưa được commit
+#git clean --force
+
+4. Thay đổi tên tác giả của commit
+#git config user.name "Nguyen Van Doanh"
+#git config user.email doanh@gmail.com
+#git commit --amend --reset-author
+
+
+1.Tạo tài khoản github
+2.Tạo repository trên github
+3.Thêm remote repository vào local repository
+Thêm vào
+#git remote add origin [git remote url]
+Check lại xem thêm vào ok hay chưa
+#git remote -v
+Thay đổi link
+#git remote set-url origin [git remote url]
+4. Đưa code từ local repo lên remote repo
+#git add .
+#git commit -m “commit comment”
+#git push origin [tên remote branch]
+
+1.Git  Stash
+Git stash được sử dụng khi muốn lưu lại các thay đổi chưa commit, hay sử dụng khi bạn chuyển qua một branch khác mà branch hiện tại đang làm chưa xong.
+
+2. Các lệnh liên quan
+Lưu lại trạng thái hiện tại của branch
+$ git stash save
+Lưu lại toàn bộ trạng thái hiện tại của branch
+Mỗi lần lưu sẽ tạo thành 1 version tại thời điểm đó
+Xem lại danh sách đã lưu
+git stash list
+Nếu muốn xem cả nội dung của từng thay đổi thì thêm option -p
+ $ git stash list -p
+hoặc xem nội dung cụ thể hơn nữa của lần thay đổi thứ 1:
+$ git stash show stash@{1}
+Lấy lại thay đổi
+$ git stash apply stash@{1}
+Xóa
+git stash drop
