@@ -1,0 +1,29 @@
+1. RABBITMQ
+- sử dụng giao thức AMQP(Advanced Message Queue Protocol — Giao thức giao nhận tin nhắn sử dụng hàng đợi). Đây là chương trình đóng vai trò trung gian lưu trữ cũng như điều phối các yêu cầu (message) giữa người nhận(consumer) và người gửi(producer).
+
+2. KAFKA
+
+
+## Phân loại
+1. Message Base: 
++ Lưu trạng thái của các consumer nhằm đảm bảo tất cả các consumer đều nhận đc message từ topic mà đã subscribe
++ Sau khi tất cả consumer nhận được message thì message đó sẽ bị xóa
++ Khi có một message mới, consumer chỉ có thể lấy đc duy nhất 1 message đó
+
+- RabitMQ
+- ActiveMQ
+- SQS
+- ZeroMQ
+- MSMQ
+- IronMQ
+- Redis Pub/sub
+
+2. Data Pipeline
++ Không lưu trạng thái của consumer
++ Message đc xóa đi sau một khoảng thời gian nhất định
++ Khi có message mới, consumer có thể lấy về 1 list message bao gồm message mới và cũ
+
+- Kafka
+- Kinesis
+- RocketMQ
+

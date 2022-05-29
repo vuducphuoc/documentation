@@ -1,0 +1,29 @@
+1. Bean là gì?
+- Bean là các module chính của chương trình (xương sống)
+- Bean được quản lý bởi Spring IoC container
+- Bean đại diện cho các dependency
+- Bean có 5 scope: 
++ Singleton (mặc định): IoC container chỉ tạo đúng duy nhất 1 object từ class bean này
++ Prototype: return một bean object riêng biệt cho mỗi lần sử dụng.
++ Request: tạo mỗi bean cho mỗi request
++ Session: tạo mỗi bean cho mỗi session
++ Global session: tạo mỗi bean cho mỗi global session
+
+2. ApplicationContext là gì?
+- ApplicationContext là nơi quản lý Bean (chính là Spring IoC container)
+- Cung cấp nhiều tính năng như i18n, resolving messages, publishing events,...
+
+3. Các cách inject 1 bean
+- Sử dụng @Autowired
+- Sử dụng contructor
+- Sử dụng setter (Thêm @Required để setter luôn được gọi để inject)
+@Component
+public class Car {
+    private final Engine engine;
+    
+    // Thêm @Required để setter luôn được gọi để inject
+    @Required
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+}

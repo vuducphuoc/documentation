@@ -1,0 +1,17 @@
+1. Partition là gì?
+- Là quá trình phân chia table thành các phân vùng nhỏ hơn
+- Là một kỹ thuật chia để trị
+
+2. Những lưu ý khi sử dụng partition
+- Partition sẽ được bắt đầu index = 0
+- Số partition tối đa là 8192
+- Tên Partition không phân biệt hoa thường
+- Partition sẽ aplly toàn bộ data và index của table
+- Không hỗ trợ Foreign keys
+- Tất cả các column sử dụng để partition đều phải thuộc (1 phần) tất cả các unique keys hoặc primary keys của table đó. (nếu có)
+
+3. Các kỹ thuật partition
+- Range Partition
+- List Partition
+- Hash Partition
+- Key Partition

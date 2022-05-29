@@ -1,0 +1,8 @@
+#Change password user root
+1. Login with other user
+2. sudo su -
+3. sudo passwd root
+4. Cập nhật new password
+
+#Restart mysql
+1. sudo service mysql restart

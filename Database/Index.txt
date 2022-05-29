@@ -1,0 +1,24 @@
+1. Index là gì?
+- Index là việc cấu trúc dữ liệu, lưu trữ theo một cơ chế chuyên biệt để tìm ra các record 1 cách nhanh chóng
+Ví dụ: Khi muốn đọc 1 mục trong quyển sách thay vì tìm từng trang ta có thể đọc mục lục và tìm ra mục đó ở trang số bao nhiêu
+
+2. Hash index
+- Hash index được tổ chức dưới dạng key-value (key là kết quả hash value của column được đánh index và value sẽ chứa 1 con trỏ đến chính xác row tương ứng)
+- Hash index truy vấn nhanh với toán tử =, <>, in, not in nhưng lại vô dụng khi truy vấn với toán tử <, >, like
+
+3. B-tree index
+- Được tổ chức và lưu trữ theo dạng cây (tree)
+
+4. Cách sử dụng index
+- Việc tạo index sẽ yêu cầu dung lượng ổ đĩa và có thể làm chậm các hoạt động khác. Đặc biệt, khi insert hay update column sử dụng index, index cần được điều chỉnh (reindex) sẽ tiêu tốn một khoảng thời gian.
+
+#Khi nào nên sử dụng index
+- Những bảng có dữ liệu lớn (khoảng > 100k) và thường xuyên query trên bảng đó
+- Đánh index vào các trường thường xuyên sử dụng mệnh đề WHERE hoặc ORDER BY
+- Không nên đánh index toàn bộ trường có độ dài lớn (nên đánh index theo số ký tự đầu tiên)
+- Không nên đánh index cho column có quá nhiều giá trị trùng lặp hay NULL
+- Chú ý đến thứ tự column khi đánh index
+
+#Một số điều kiện không có nhiều tác dụng
+- Toán tử LIKE không đc để % đứng trước
+- Không sử dụng các phép toán khi truy vấn có đánh index
