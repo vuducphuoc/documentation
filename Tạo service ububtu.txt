@@ -1,0 +1,24 @@
+## Tạo service
+sudo vi /etc/systemd/system/stg-polc-api.service
+
+"[Unit]
+Description=PolcApi Java service
+
+[Service]
+WorkingDirectory=/home/ec2-user/kagoshima
+ExecStart=/usr/bin/sudo /bin/java -Xms1024m -Xmx2048m -jar resourceserver-1.0.0.jar
+User=ec2-user
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target"
+
+
+==========
+sudo systemctl enable stg-polc-api.service
+
+sudo systemctl start stg-polc-api
+sudo systemctl stop stg-polc-api
+sudo systemctl status stg-polc-api

@@ -1,0 +1,12 @@
+
+mvn dependency:tree					: in ra tất cả các dependency trong project dưới dạng Tree.
+mvn dependency:tree -Dverbose		: kiểm tra những dependency nào đang bị xung đột
+
+#Filter trong Maven dependency tree
+mvn dependency:tree -Dincludes=[groupId]:[artifactId]:[type]:[version]
+mvn dependency:tree -Dexcludes=[groupId]:[artifactId]:[type]:[version]
+
+#Lưu dependency tree vào file
+mvn dependency:tree -DoutputFile=[file-path]
+
+

@@ -1,0 +1,8 @@
+#Chạy container có sẵn
+- docker start <containers>
+
+#Kiểm tra log của container
+- docker logs [-f] [--tail <rows_display>] <container>
+	+ [-f]: giám sát log realtime
+	+ [--tail <rows_display>]: hiển thị số dòng log
+

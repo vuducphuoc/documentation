@@ -1,0 +1,4 @@
+$ sudo su - www-user
+$ ssh-keygen -t rsa
+$ cd /home/www-user/.ssh/
+$ mv id_rsa.pub authorized_keys

@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  springboot-docker:
+    image: phuocvdomi/springboot-docker:v1.0.0
+    container_name: springboot-docker-container
+    ports:
+    - 8088:8088

@@ -6,3 +6,20 @@
 
 #Restart mysql
 1. sudo service mysql restart
+
+=========================================================================================================
+|PORT
+=========================================================================================================
+
+#Kiểm tra các port đang allow
+sudo ufw status verbose
+
+---------------------------------------------------------------------------------------------------------
+ sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 8090 -j ACCEPT
+
+#Allow port
+sudo ufw allow <port>
+
+#Check các socket port đang chạy
+ss -lntu
+

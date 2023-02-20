@@ -1,0 +1,12 @@
+#IMAGE
+1. List images
+- docker images
+
+2. Tìm kiếm images
+- docker search <tên_image>
+
+3.Pull image
+- docker pull <tên_image>[:<version>]
+
+4. Xóa image
+- docker image rm <tên_image hoặc id_image>

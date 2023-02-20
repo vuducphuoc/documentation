@@ -1,0 +1,19 @@
+#sudo apt-get update
+#sudo apt-get install postgresql
+
+nano /etc/postgresql/10/main/postgresql.conf
+#listen_addresses = 'localhost' -> listen_addresses = '*'
+
+nano /etc/postgresql/10/main/pg_hba.conf
+host    all             all             127.0.0.1/32            md5	->	host    all             all             0.0.0.0/0            md5
+
+
+sudo ufw allow 5432/tcp
+sudo systemctl restart postgresql
+
+*Create read only user*
+CREATE USER user01 WITH PASSWORD '7DI6xkwr#6p4';
+
+GRANT CONNECT ON DATABASE ensemble TO user01;
+-- This assumes you're actually connected to mydb..
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO user01;

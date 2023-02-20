@@ -1,0 +1,18 @@
+#Build container thành image
+- docker commit <container> <image_name>:<tag>
+
+#Tạo Dockerfile
+- touch Dockerfile
+
+#Biên tập Dockerfile
+- FROM <image>				: Build từ image nào
+- RUN <tên_lệnh>			: Chạy các lệnh tương ứng
+- WORKDIR <path>			: Thư mục mặc định
+- EXPOSE <port>				: Lắng nghe từ cổng nào
+- ADD <source_dir> <target_dir>		: Copy file
+- ENTRYPOINT ["<process>"]		: Sau khi tạo sẽ chạy tiến trình nào
+- CMD ["<parameter>", "..."]		: Chạy tiến trình với tham số
+
+#Build image từ Dockerfile
+- docker build -t <image_name>:<tag> -f Dockerfile <path>
+	+ path: thư mục chứa docker file

@@ -1,7 +1,0 @@
-1. Khái niệm
-- Beanstalk là một service dùng để giúp bạn làm mọi công việc (build môi trường, maintain hệ thống, ...). Điều bạn cần làm là deploy code lên
-- Một hệ thống ví dụ về Beanstalk là Heroku
-
-2. Platform supports
-- Go, Java, .Net, NodeJS, ...
-

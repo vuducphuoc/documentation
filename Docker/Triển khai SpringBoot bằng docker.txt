@@ -1,0 +1,40 @@
+#Tài khoản docker
+Username: phuocvdomi
+Token: dckr_pat_qIuX6GYoIQ-i3j2cvPzk5z_pvb8
+dckr_pat_tY1N6hOhon7oiraGa7SzAlmJTGA
+
+https://docs.docker.com/language/java/
+
+1. Trên server cài đặt gitlab-runner, docker
+
+
+#Build docker:
+docker build --tag <repo>/<repo>:<tag> .
+
+#Tạo tag cho images
+docker tag springboot-docker:latest springboot-docker:v1.0.0
+
+#Push to Docker
+docker push phuocvdomi/springboot-docker:v1.0.0
+
+docker push <username>/<repo>:<tag>
+
+# Pull and start/run a container
+docker run -dp 8085:8088 \
+--name springboot-docker-container \
+-v "$(pwd):/app" \
+--network springboot-app-network \
+phuocvdomi/springboot-docker:v1.0.0
+
+-dp: Map port 8085(Host) <=> 8088(Container)
+-v(volumn): Map volumn tới volumn /app của Container
+
+# Update code & rerun:
+docker restart springboot-docker-container
+
+# Tạo docker network
+docker network create <network_name>
+
+
+# Build Docker compose file
+docker-compose -f docker-compose.dev.yml up --build
