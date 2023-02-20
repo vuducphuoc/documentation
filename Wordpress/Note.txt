@@ -1,0 +1,5 @@
+#Lấy danh sách attributes
+$product_attributes = $product->get_attributes();
+
+#Lấy brand url
+get_term_link( $brand->term_id, $brand->taxonomy );

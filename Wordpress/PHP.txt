@@ -1,0 +1,2 @@
+#Check has key in array
+array_key_exists(key, array)
