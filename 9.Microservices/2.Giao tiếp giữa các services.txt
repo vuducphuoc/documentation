@@ -1,0 +1,11 @@
+1. Các loại giao tiếp chính
+- Remote Procedure Invocation: giao tiếp với nhau thông qua API end-point (REST, gRPC, Apache Thrift)
+	+ REST API: các API thông thường sử dụng response json/xml
+	+ gRPC: các API sử dụng response binary để đẩy nhanh quá trình. 
+=> Các API thông thường sẽ phải chuyển đổi nhiều từ json/xml về model nên sẽ mất nhiều thời gian xử lý nên sử dụng gRPC là một cách tối ưu
+- Messaging: giao tiếp với nhau qua hệ thống Message Queue (Apache Kafka, RabbitMQ)
+- Domain-specific protocol: 
+	+ Email protocols như: SMTP, IMAP
+	+ Media streaming protocols như: RTMP, HLS, và HDS
+
+2. 

@@ -1,0 +1,6 @@
+https://nextlint.com/technology/tan-man-ve-he-thong-messaging-kafka-rabbitmq-00439d90948b
+https://viblo.asia/p/rabbitmq-vs-kafka-hai-cach-truyen-tai-khac-nhau-pgjLNdYE432
+
+
+1. RabbitMQ
+- là một hệ thống message queue phân tán, sử dụng truyền tin dạng hàng đợi

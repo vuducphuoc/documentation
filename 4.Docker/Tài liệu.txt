@@ -1,0 +1,5 @@
+1. Image là gì?
+- Image là các ứng dụng được đóng gói
+
+2. Container là gì
+- Container là các chương trình được khởi chạy từ image

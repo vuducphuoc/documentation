@@ -1,0 +1,73 @@
+1. List các image
+- docker images
+
+2. Tìm kiếm image từ docker
+- docker search <key_word>
+
+3. Tải image về
+- docker pull <image>[:tag]
+
+4. Xóa image
+- docker image rm <image>[:tag]
+
+5. List các container đang chạy
+- docker ps
+
+6. List all các container
+- docker ps -a
+
+7. Vào container
+- docker attach <container_id>
+
+Thoát: Ctrl + P + Q
+
+8. Stop container
+- docker stop <container_id>
+
+9. Run container
+- docker run -it [--rm] --name "<name>" -h <host_name> <image>[:tag] [--network <network_name>]
+
+10. Xóa container
+- docker rm [-f] <container_id>
+
+20. Ánh xạ thư mục máy host vào container
+- docker run it -v <path_host>:<path_container> <container_id>
+
+21. Chia sẻ dữ liệu giữa các container
+- docker run -it --volumns-from <container_id> <image_id>[:tag]
+
+22. Tạo volume
+- docker volume create <name>
+
+23. Kiểm tra thông tin volume
+- docker volume inspect <volume_name/volume_id>
+
+24. Xóa volume
+- docker volume rm <volume_name/volume_id>
+
+25. Gắn ổ đĩa volume vào container
+- docker run -it --mount source=<disk>,target=<container> <image_id>
+
+#List các network
+- docker network ls
+
+#Thông tin chi tiết mạng
+- docker network inspect <network_id>
+
+#Tạo mới network
+- docker network create --driver bridge <network_name>
+
+#Kết nối network cho container
+- docker network connect bridge <container>
+
+
+
+
+
+
+
+
+
+
+
+

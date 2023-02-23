@@ -1,0 +1,9 @@
+Có 2 cách để triển khai Saga.
+
+1. Events/Choreography-based saga
+- Service đầu tiên thực hiện transaction và sau đó publish một event. Event này được lắng nghe bởi một hoặc nhiều services thực hiện các transactions.
+- Khi có lỗi xảy ra các service cần được rollback sẽ lắng nghe các event lỗi theo từng bước để rollback chính xác
+
+2. Command/Orchestration-based saga
+- Sẽ có một service mới chịu trách nhiệm điều phối các logic của Saga
+- Saga service giao tiếp với từng service theo kiểu command/reply để cho chúng biết thực hiện thao tác nào

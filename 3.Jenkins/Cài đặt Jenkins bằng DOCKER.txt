@@ -1,0 +1,4 @@
+public ip sử dụng tool ngrok
+
+1. RUN Jenkins images
+docker run -d —name jenkins -p 8080:8080 -p 50000:50000 -v /User/duy/Desktop/jenkins:/var/jenkins_home jenkins/jenkins:ltsdocker run -d —name jenkins -p 8080:8080 -p 50000:50000 -v /User/duy/Desktop/jenkins:/var/jenkins_home jenkins/jenkins:lts

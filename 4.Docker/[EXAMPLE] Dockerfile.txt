@@ -1,0 +1,16 @@
+# syntax=docker/dockerfile:1
+FROM openjdk:oraclelinux8
+
+#working directory default khi docker được khởi động
+WORKDIR /app
+
+# Copy từ local tới container
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+
+#Run this inside the image
+RUN ./mvnw dependency:go-offline
+
+COPY src ./src
+
+CMD ["./mvnw", "spring-boot:run"]
